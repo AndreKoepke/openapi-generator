@@ -1,23 +1,23 @@
-{{#pattern}}{{^isByteArray}}@Matches(pattern="{{{pattern}}}")
+{{#pattern}}{{^isByteArray}}@Matches(/{{pattern}}/)
     {{/isByteArray}}{{/pattern}}{{!
 minLength && maxLength set
-}}{{#minLength}}{{#maxLength}}@Length(min={{minLength}},max={{maxLength}})
+}}{{#minLength}}{{#maxLength}}@Length({{minLength}}, {{maxLength}})
     {{/maxLength}}{{/minLength}}{{!
 minLength set, maxLength not
-}}{{#minLength}}{{^maxLength}}@MinLength(min={{minLength}})
+}}{{#minLength}}{{^maxLength}}@MinLength({{minLength}})
     {{/maxLength}}{{/minLength}}{{!
 minLength not set, maxLength set
-}}{{^minLength}}{{#maxLength}}@MaxLength(max={{maxLength}})
+}}{{^minLength}}{{#maxLength}}@MaxLength({{maxLength}})
     {{/maxLength}}{{/minLength}}{{!
 @Size: minItems && maxItems set
-}}{{#minItems}}{{#maxItems}}@ArrayMinSize(min={{minItems}})
-    @ArrayMaxSize(max={{maxItems}})
+}}{{#minItems}}{{#maxItems}}@ArrayMinSize({{minItems}})
+    @ArrayMaxSize({{maxItems}})
     {{/maxItems}}{{/minItems}}{{!
 @Size: minItems set, maxItems not
-}}{{#minItems}}{{^maxItems}}@ArrayMinSize(min={{minItems}})
+}}{{#minItems}}{{^maxItems}}@ArrayMinSize({{minItems}})
     {{/maxItems}}{{/minItems}}{{!
 @Size: minItems not set && maxItems set
-}}{{^minItems}}{{#maxItems}}@ArrayMaxSize(max={{maxItems}})
+}}{{^minItems}}{{#maxItems}}@ArrayMaxSize({{maxItems}})
     {{/maxItems}}{{/minItems}}{{!
 check for integer or long / all others=decimal type with @Decimal*
 isInteger set

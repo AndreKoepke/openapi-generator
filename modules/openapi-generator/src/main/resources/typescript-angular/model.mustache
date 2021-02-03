@@ -4,6 +4,10 @@
 {{#tsImports}}
 import { {{classname}} } from '{{filename}}';
 {{/tsImports}}
+{{! Add all annotations for validation
+maybe this can be done nicer with intelligent tsImports
+}}
+import { IsDefined, Matches, Length, MinLength, MaxLength, ArrayMinSize, ArrayMaxSize, Min, Max } from 'class-validator';
 
 
 {{#description}}
